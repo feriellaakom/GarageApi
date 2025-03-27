@@ -28,6 +28,8 @@ public class CarService {
             car.setEtat(newEtat);
             return carRepository.save(car);
         }).orElseThrow(() -> new RuntimeException("Voiture non trouvée"));
+
+
     }
 
 
@@ -37,4 +39,8 @@ public class CarService {
     public void deleteCar(String immatriculation) {
         carRepository.deleteById(immatriculation);
     }
+
+public List<Car> getCarsByModele(String modele) {
+    return carRepository.findByModele(modele);
+}
 }
