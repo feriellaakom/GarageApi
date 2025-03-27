@@ -42,7 +42,7 @@ public class CarController {
     }
 
 
-    @GetMapping("/{immatriculation}")
+    @GetMapping
     public List<Car> getAllCars() {
         return carService.getAllCars();
     }
