@@ -5,6 +5,8 @@ import com.garage.garage_api.model.Car;
 import com.garage.garage_api.service.CarService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -37,5 +39,11 @@ public class CarController {
     public ResponseEntity<Void> deleteCar(@PathVariable String immatriculation) {
         carService.deleteCar(immatriculation);
         return ResponseEntity.noContent().build();
+    }
+
+
+    @GetMapping("/{immatriculation}")
+    public List<Car> getAllCars() {
+        return carService.getAllCars();
     }
 }
