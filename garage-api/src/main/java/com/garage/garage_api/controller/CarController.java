@@ -46,4 +46,8 @@ public class CarController {
     public List<Car> getAllCars() {
         return carService.getAllCars();
     }
-}
+
+@GetMapping("/byModele/{modele}")
+public List<Car> getCarsByModele(@PathVariable String modele) {
+    return carService.getCarsByModele(modele);
+}}
