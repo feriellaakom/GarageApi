@@ -3,6 +3,7 @@ import com.garage.garage_api.model.Car;
 import com.garage.garage_api.repository.CarRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -29,6 +30,10 @@ public class CarService {
         }).orElseThrow(() -> new RuntimeException("Voiture non trouvée"));
     }
 
+
+    public List<Car> getAllCars() {
+        return carRepository.findAll();
+    }
     public void deleteCar(String immatriculation) {
         carRepository.deleteById(immatriculation);
     }
